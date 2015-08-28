@@ -3,5 +3,62 @@
   "pronoun": "his",
   "jobTitle": "Frontend Engineer",
   "firstName": "Shiraj",
-  "lastName": "Ganguly"
+  "lastName": "Ganguly",
+  "email": "shiraj@prolificinteractive.com",
+  "sections": [
+    {
+      "title": "Originally from",
+      "content": "Staten Island, NY",
+      "icon": "http://where.the.icon/is",
+      "class": "normal"
+    },
+    {
+      "title": "Currently Lives in",
+      "content": "Manhattan",
+      "icon": "http://where.the.icon/is",
+      "class": "normal"
+    },
+    {
+      "title": "Previous Experience",
+      "content": "What you used to do before",
+      "icon": "http://where.the.icon/is",
+      "class": "normal"
+    },
+    {
+      "type": "truthsAndALie",
+      "title": "3 Truths and a lie",
+      "content": [
+        "His favorite beer is coors light.", 
+        "His favorite movie is the Matrix",
+        "He once got sprayed by 3 skunks",
+        "His favorite food is escargot"
+      ],
+      "class": "normal"
+    },
+    {
+      "type": "favoriteApps",
+      "title": "Favorite Apps",
+      "content": ["Instagram", "evernote", "snapchat"],
+      "class": "normal"
+    },
+    {
+      "type": "stats",
+      "title": "Stats",
+      "content": [
+        {
+          "name": "Strength",
+          "value": "Very high"
+        },
+        {
+          "name": "Dexterity",
+          "value": "Very high"
+        },
+        {
+          "name": "Hit Points",
+          "value": "Very high"
+        }
+      ],
+      "class": "stats"
+    }
+  ]
 }

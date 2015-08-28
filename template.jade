@@ -6,9 +6,7 @@ html
     meta(name="description", content="")
     meta(name="keywords", content="")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
-    // if lt IE 9
-      script(type="text/javascript", src="js/html5shiv.js")
-    link(rel="stylesheet", href="css/style.css", type="text/css")
+    link(rel="stylesheet", href="style.css", type="text/css")
   body
     header
       .hero
@@ -25,20 +23,37 @@ html
             img(src="#{locals.image}", alt="A picture")
           .portrait-text
             .portrait-name
+              p #{locals.firstName} #{locals.lastName}
             .portrait-position
+              p #{locals.jobTitle}
             .portrait-email
+              p #{locals.email}
 
       .main-content
         ul
-          li.from-where
-          li.lives-where
-          li.experience
-          li.stats
-          li.truths-and-lie
-          li.favorite-apps
+        each section in locals.sections
+          li.section(class=section.class) 
+            h3 #{section.title}
+            if section.type
+              if section.type == "favoriteApps"
+                ul
+                  each value in section.content
+                    li #{value}
+
+              if section.type == "truthsAndALie"
+                ul
+                  each value in section.content
+                    div.box 
+                      p #{value}
+
+              if section.type == "stats"
+                ul
+                  each stat in section.content
+                    div.box 
+                      p #{stat.name}
+                      p #{stat.value}
+            else
+              p #{section.content}
 
     footer
-
-    script(type="text/javascript", src="js/jquery-1.11.0.min.js")
-    // if IE
-      script(type="text/javascript", src="js/placeholder.js")
+      .closing-graphic

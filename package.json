@@ -9,7 +9,6 @@
   "author": "Shiraj Ganguly",
   "license": "ISC",
   "dependencies": {
-    "jade": "^1.11.0",
-    "open": "0.0.5"
+    "jade": "^1.11.0"
   }
 }
