@@ -1,0 +1,44 @@
+doctype html
+html
+  head(lang="en")
+    title #{locals.pageTitle}
+    meta(http-equiv="content-type", content="text/html; charset=UTF-8")
+    meta(name="description", content="")
+    meta(name="keywords", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
+    // if lt IE 9
+      script(type="text/javascript", src="js/html5shiv.js")
+    link(rel="stylesheet", href="css/style.css", type="text/css")
+  body
+    header
+      .hero
+        h1 #{locals.firstName} is the new p!
+
+        .welcome-blurb
+          p.
+            There's a new #{locals.jobTitle} in town and #{locals.pronoun} name is #{locals.firstName}.
+          p.
+            Let's give #{locals.pronoun} a big welcome to the Prolific Family!
+
+        .portrait-area
+          .portrait-image
+            img(src="#{locals.image}", alt="A picture")
+          .portrait-text
+            .portrait-name
+            .portrait-position
+            .portrait-email
+
+      .main-content
+        ul
+          li.from-where
+          li.lives-where
+          li.experience
+          li.stats
+          li.truths-and-lie
+          li.favorite-apps
+
+    footer
+
+    script(type="text/javascript", src="js/jquery-1.11.0.min.js")
+    // if IE
+      script(type="text/javascript", src="js/placeholder.js")

@@ -1,0 +1,15 @@
+{
+  "name": "emailer",
+  "version": "1.0.0",
+  "description": "Small tool to automatically generate an html email",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shiraj Ganguly",
+  "license": "ISC",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "open": "0.0.5"
+  }
+}
