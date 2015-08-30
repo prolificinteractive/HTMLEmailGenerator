@@ -1,38 +1,45 @@
+- var myWebStorage = locals.webStorage
+if locals.location.toLowerCase() == 'bk'
+  - var bgImage = locals.bkBackground
+else
+  - var bgImage = locals.sfBackground
+
 doctype html
 html
   head(lang="en")
     title #{locals.pageTitle}
-    meta(http-equiv="content-type", content="text/html; charset=UTF-8")
+    meta(http-equiv="content-type", content="text/html" charset="UTF-8")
     meta(name="description", content="")
     meta(name="keywords", content="")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
-    link(rel="stylesheet", href="style.css", type="text/css")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    style 
+      include ./style.css
   body
     header
-      .hero
+      .hero(style="background:url(http://blog.prolificinteractive.com/wp-content/themes/prolific2015/build/img/blue_overlay.png) repeat,  url(#{bgImage}) no-repeat center; background-size:cover;")
         h1 #{locals.firstName} is the new p!
 
         .welcome-blurb
           p.
-            There's a new #{locals.jobTitle} in town and #{locals.pronoun} name is #{locals.firstName}.
-          p.
-            Let's give #{locals.pronoun} a big welcome to the Prolific Family!
+            There's a new #{locals.jobTitle} in town and #{locals.pronoun} name is #{locals.firstName}!
+            Let's give #{locals.pronoun == 'his' ? 'him' : 'her'} a big welcome to the Prolific Family!
 
         .portrait-area
           .portrait-image
             img(src="#{locals.image}", alt="A picture")
           .portrait-text
             .portrait-name
-              p #{locals.firstName} #{locals.lastName}
+              h3 #{locals.firstName} #{locals.lastName}
             .portrait-position
-              p #{locals.jobTitle}
+              h4 #{locals.jobTitle} - #{locals.location}
             .portrait-email
-              p #{locals.email}
+              a.email(href="mailto:#{locals.email}" style="text-decoration: none; color:white") #{locals.email}
 
       .main-content
         ul
         each section in locals.sections
-          li.section(class=section.class) 
+          li.section(class=section.class)
+            img.icon(src="#{myWebStorage}#{section.icon}")
             h3 #{section.title}
             if section.type
               if section.type == "favoriteApps"
@@ -49,7 +56,7 @@ html
               if section.type == "stats"
                 ul
                   each stat in section.content
-                    div.box 
+                    div.stat-box 
                       p #{stat.name}
                       p #{stat.value}
             else
