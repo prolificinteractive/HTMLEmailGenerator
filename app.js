@@ -21,6 +21,9 @@ sass.renderAsync({
 .tap(function (renderedHTML) {
   fs.writeFileAsync('rendered.html', renderedHTML);
 })
+.tap(function(renderedHTML){
+  fs.writeFileAsync('inlined.html', juice(renderedHTML));
+})
 .then(function(renderedHTML){
   if(process.argv[2] ==='send'){
 
@@ -34,9 +37,9 @@ sass.renderAsync({
 
     var mailOptions = {
       from: 'Mailer <account@whateverdomain.com>', // sender address
-      to: 'shirajganguly@gmail.com', // list of receivers
-      subject: "There's a new P", // Subject line
-      text: "Theres a new P", 
+      to: 'bobby@prolificinteractive.com', // list of receivers
+      subject: "Test Email", // Subject line
+      text: "Testing Email", 
       html: juice( renderedHTML, {
         inlinePseudoElements: true
       })
